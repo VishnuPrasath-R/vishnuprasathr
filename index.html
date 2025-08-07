@@ -5,20 +5,23 @@
   <title>Vishnuprasath R</title>
   <style>
     body {
-      background-color: #000;
-      color: #fff;
-      font-family: 'Courier New', Courier, monospace;
       margin: 0;
+      padding: 0;
+      background: black;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+      color: #0f0;
     }
 
     h1 {
       font-size: 60px;
-      color: #0f0;
+      z-index: 2;
       text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
       animation: glitch 2s infinite;
       margin: 0;
@@ -26,20 +29,38 @@
 
     img {
       width: 350px;
-      height: auto;
       border-radius: 10px;
       box-shadow: 0 0 20px #0f0;
       margin-top: 30px;
+      z-index: 2;
       animation: flicker 3s infinite;
     }
 
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(0, 255, 0, 0.8);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+    }
+
     @keyframes glitch {
-      0% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; transform: translate(0, 0); }
-      20% { text-shadow: 2px 2px #f00, -2px -2px #00f; transform: translate(1px, -1px); }
-      40% { text-shadow: -2px -2px #0f0, 2px 2px #0ff; transform: translate(-1px, 1px); }
-      60% { text-shadow: 1px 1px #f0f, -1px -1px #ff0; transform: translate(0.5px, -0.5px); }
-      80% { text-shadow: -1px -1px #0f0, 1px 1px #f00; transform: translate(-0.5px, 0.5px); }
-      100% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; transform: translate(0, 0); }
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(1px, -1px); }
+      40% { transform: translate(-1px, 1px); }
+      60% { transform: translate(0.5px, -0.5px); }
+      80% { transform: translate(-0.5px, 0.5px); }
+      100% { transform: translate(0, 0); }
     }
 
     @keyframes flicker {
@@ -50,9 +71,32 @@
         opacity: 0.4;
       }
     }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh) translateX(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) translateX(20px);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="particles">
+ 
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 25%; animation-delay: 5s;"></div>
+    <div class="particle" style="left: 80%; animation-delay: 6s;"></div>
+    <div class="particle" style="left: 60%; animation-delay: 7s;"></div>
+  </div>
+
   <h1>Vishnu Prasath R</h1>
     <h1>Vamps_J</h1>
   <img src="pic1.JPG" alt="Vishnu Prasath R">
