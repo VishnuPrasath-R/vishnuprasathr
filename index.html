@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishnuprasath R - Portfolio Resume</title>
+  <title>Vishnu Prasath R - Portfolio</title>
   <style>
     * {
       margin: 0;
@@ -12,19 +12,19 @@
     }
 
     body {
-      background: linear-gradient(-45deg, #000000, #0f0f0f, #111111, #050505);
+      background: linear-gradient(-45deg, #000, #111, #050505, #0f0f0f);
       background-size: 400% 400%;
-      animation: bg 15s ease infinite;
+      animation: gradient 15s ease infinite;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       padding: 2rem;
       overflow-x: hidden;
     }
 
-    @keyframes bg {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1, h2 {
@@ -33,54 +33,53 @@
       margin-bottom: 1rem;
     }
 
-    .grid {
+    .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 2rem;
       max-width: 1200px;
-      margin: 0 auto 3rem auto;
-      padding: 1rem;
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 12px;
+      margin: 0 auto;
     }
 
     .card {
-      background: rgba(15, 15, 15, 0.7);
+      background: rgba(0, 0, 0, 0.6);
       padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
     }
 
-    .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
+    ul {
+      padding-left: 1.2rem;
+      line-height: 1.6;
     }
 
-    .profile img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #0f0;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
+    li {
+      color: #ccc;
       margin-bottom: 0.5rem;
-      color: #0f0;
     }
 
     p {
-      line-height: 1.6;
-      font-size: 1rem;
       color: #ccc;
+      line-height: 1.6;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #0f0;
+      margin-bottom: 1rem;
     }
 
     footer {
@@ -89,57 +88,69 @@
       color: #888;
       margin-top: 2rem;
     }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="profile">
-    <img src="pic1.JPG" alt="Vishnuprasath R">
+  <div class="header">
+    <img src="pic1.JPG" alt="Vishnu Prasath R" />
     <h1>Vishnu Prasath R</h1>
-    <p>L1 Certified Appian Developer • Chennai • Email: vishnugarrix@gmail.com</p>
+    <p>L2 Appian Certified Senior Developer • Chennai • Email: vishnugarrix@gmail.com</p>
   </div>
 
-  <div class="grid">
+  <div class="container">
+
     <div class="card">
-      <h2 class="section-title">Professional Summary</h2>
-      <p>Certified Appian Developer with 3.2+ years' experience in BPM, UI/UX design, and MySQL. Strong in agile workflows and cross-functional team collaboration.</p>
+      <h2>Professional Summary</h2>
+      <ul>
+        <li>3.2 years of experience in BPM, application development, and UI/UX design.</li>
+        <li>Skilled in MySQL, Agile methodologies, and problem-solving.</li>
+        <li>Effective communicator in English and Tamil.</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h2 class="section-title">Work Experience</h2>
-      <p><strong>WNS-Vuram — Associate Technical Consultant (2022–Present)</strong><br>
-      - Built SCM app that won Appian Solutions Cup 2022<br>
-      - Delivered Dynamic Case Management and GAF features<br>
-      - Hands-on insurance sector (Chola MS)<br><br>
-      <strong>Appian Intern (Mar–Jul 2022)</strong><br>
-      - Created Form Builder POC<br>
-      - Integrated AI + PDF tools with GAF</p>
+      <h2>Work Experience</h2>
+      <ul>
+        <li><strong>WNS-Vuram – Associate Technical Consultant (Jul 2022–Present)</strong></li>
+        <li>Built SCM app that won Appian Solutions Cup 2022.</li>
+        <li>Developed features for Dynamic Case Management (DCM).</li>
+        <li>Contributed to GAF (Generic Approval Framework) v13 and v14.</li>
+        <li>Worked on Chola MS insurance project.</li>
+        <li><strong>WNS-Vuram – Appian Intern (Mar–Jul 2022)</strong></li>
+        <li>Built Form Builder POC and collaborated on AI + PDF integration.</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h2 class="section-title">Education</h2>
-      <p><strong>B.E. Computer Science</strong><br>Sri Sairam Institute, CGPA 8.77 (2018–2022)<br><br>
-      <strong>CBSE 12th</strong><br>77% (2017–2018)<br><br>
-      <strong>CBSE 10th</strong><br>CGPA 8.8 (2015–2016)</p>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Primary:</strong> Appian, Data Modeling, Complex UI, BPM, MySQL, Agile, UI/UX</li>
+        <li><strong>Secondary:</strong> Data Science, Machine Learning, AI, Presentation Skills</li>
+      </ul>
     </div>
 
     <div class="card">
-      <h2 class="section-title">Skills</h2>
-      <p><strong>Primary:</strong> Appian, UI/UX, MySQL, BPM, Agile, Data Modeling<br>
-      <strong>Secondary:</strong> AI, ML, Data Science, Presentations</p>
+      <h2>Achievements</h2>
+      <ul>
+        <li>Excel@Work award for outstanding performance at WNS-Vuram.</li>
+        <li>Spotlight of the Month – September 2022.</li>
+        <li>1st place in Appian Solutions Cup 2022 (SCM App).</li>
+        <li>Best Final Year Project – “Resume Endorser”.</li>
+        <li>Winner of multiple paper presentations in college.</li>
+        <li>Represented Tamil Nadu in Vignyana Pradarshini 2015 (Physics experiment).</li>
+      </ul>
     </div>
 
-    <div class="card">
-      <h2 class="section-title">Achievements</h2>
-      <p>🏆 Excel@Work Award (WNS-Vuram)<br>
-      🌟 Spotlight of the Month (Sep 2022)<br>
-      🥇 Appian Solutions Cup Winner<br>
-      🧠 Final year project “Resume Endorser” recognized<br>
-      🧪 Represented Tamil Nadu in Vignyana Pradarshini 2015</p>
-    </div>
   </div>
 
   <footer>
-    &copy; 2025 Vishnuprasath R. All rights reserved.
+    &copy; 2025 Vishnu Prasath R. All rights reserved.
   </footer>
 </body>
 </html>
