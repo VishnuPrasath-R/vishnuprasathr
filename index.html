@@ -13,16 +13,25 @@
 
     html, body {
       font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      height: 100%;
+      background: linear-gradient(-45deg, #000000, #0f0f0f, #111111, #050505);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       color: #fff;
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
 
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     header {
       text-align: center;
       padding: 3em 1em;
-      background: #111;
+      background-color: rgba(0, 0, 0, 0.6);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -30,7 +39,7 @@
     }
 
     header h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       color: #0f0;
       margin-bottom: 0.2em;
     }
@@ -44,6 +53,9 @@
       padding: 4em 2em;
       max-width: 1000px;
       margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 12px;
+      margin-bottom: 2em;
     }
 
     section h2 {
@@ -62,7 +74,7 @@
 
     .profile-photo {
       display: block;
-      max-width: 200px;
+      max-width: 220px;
       border-radius: 50%;
       margin: 2em auto;
       box-shadow: 0 0 20px #0f0;
@@ -91,11 +103,11 @@
 </head>
 <body>
   <header>
-    <h1>Vishnuprasath R</h1>
-    <p>Appian Developer | Tech Enthusiast</p>
+    <h1>Vishnu Prasath R</h1>
+    <p>Appian Developer | L2 Certified</p>
   </header>
 
-  <img src="your-photo.jpg" alt="Vishnuprasath R" class="profile-photo" />
+  <img src="pic1.JPG" alt="Vishnuprasath R" class="profile-photo" />
 
   <section id="about">
     <h2>About Me</h2>
