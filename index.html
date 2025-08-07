@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishnuprasath R - Portfolio</title>
+  <title>Vishnuprasath R - Portfolio Resume</title>
   <style>
     * {
       margin: 0;
@@ -11,128 +11,132 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      font-family: 'Segoe UI', sans-serif;
-      height: 100%;
+    body {
       background: linear-gradient(-45deg, #000000, #0f0f0f, #111111, #050505);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: bg 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
       color: #fff;
-      scroll-behavior: smooth;
+      padding: 2rem;
       overflow-x: hidden;
     }
 
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes bg {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    header {
+    h1, h2 {
       text-align: center;
-      padding: 3em 1em;
-      background-color: rgba(0, 0, 0, 0.6);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,255,0,0.2);
-    }
-
-    header h1 {
-      font-size: 2.8em;
       color: #0f0;
-      margin-bottom: 0.2em;
+      margin-bottom: 1rem;
     }
 
-    header p {
-      font-size: 1.2em;
-      color: #ccc;
-    }
-
-    section {
-      padding: 4em 2em;
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.5);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem auto;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 12px;
-      margin-bottom: 2em;
     }
 
-    section h2 {
-      font-size: 2em;
-      color: #0f0;
-      margin-bottom: 1em;
-      border-bottom: 1px solid #0f0;
-      padding-bottom: 0.3em;
+    .card {
+      background: rgba(15, 15, 15, 0.7);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    section p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #ddd;
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(0, 255, 0, 0.4);
     }
 
-    .profile-photo {
-      display: block;
-      max-width: 220px;
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
-      margin: 2em auto;
-      box-shadow: 0 0 20px #0f0;
+      box-shadow: 0 0 15px #0f0;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      margin-bottom: 0.5rem;
+      color: #0f0;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #ccc;
     }
 
     footer {
       text-align: center;
-      padding: 2em;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       color: #888;
-      border-top: 1px solid #222;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2em;
-      }
-      section h2 {
-        font-size: 1.5em;
-      }
-      section {
-        padding: 3em 1em;
-      }
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="profile">
+    <img src="pic1.JPG" alt="Vishnuprasath R">
     <h1>Vishnu Prasath R</h1>
-    <p>Appian Developer | L2 Certified</p>
-  </header>
+    <p>L1 Certified Appian Developer • Chennai • Email: vishnugarrix@gmail.com</p>
+  </div>
 
-  <img src="pic1.JPG" alt="Vishnuprasath R" class="profile-photo" />
+  <div class="grid">
+    <div class="card">
+      <h2 class="section-title">Professional Summary</h2>
+      <p>Certified Appian Developer with 3.2+ years' experience in BPM, UI/UX design, and MySQL. Strong in agile workflows and cross-functional team collaboration.</p>
+    </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate Appian Developer with experience in building smart workflow applications. I love creating clean, scalable, and efficient solutions to complex problems.</p>
-  </section>
+    <div class="card">
+      <h2 class="section-title">Work Experience</h2>
+      <p><strong>WNS-Vuram — Associate Technical Consultant (2022–Present)</strong><br>
+      - Built SCM app that won Appian Solutions Cup 2022<br>
+      - Delivered Dynamic Case Management and GAF features<br>
+      - Hands-on insurance sector (Chola MS)<br><br>
+      <strong>Appian Intern (Mar–Jul 2022)</strong><br>
+      - Created Form Builder POC<br>
+      - Integrated AI + PDF tools with GAF</p>
+    </div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <p>Appian, JavaScript, HTML/CSS, REST APIs, Agile, OCR, AI Integrations, Records, CDTs, Process Models.</p>
-  </section>
+    <div class="card">
+      <h2 class="section-title">Education</h2>
+      <p><strong>B.E. Computer Science</strong><br>Sri Sairam Institute, CGPA 8.77 (2018–2022)<br><br>
+      <strong>CBSE 12th</strong><br>77% (2017–2018)<br><br>
+      <strong>CBSE 10th</strong><br>CGPA 8.8 (2015–2016)</p>
+    </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Worked on various projects including Dynamic Case Management, Pay Cycle Management, and FormAI automation tools.</p>
-  </section>
+    <div class="card">
+      <h2 class="section-title">Skills</h2>
+      <p><strong>Primary:</strong> Appian, UI/UX, MySQL, BPM, Agile, Data Modeling<br>
+      <strong>Secondary:</strong> AI, ML, Data Science, Presentations</p>
+    </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p>Currently working as a Senior Appian Developer, I’ve delivered multiple features in enterprise applications used across domains like insurance and supply chain.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: vishnu@example.com<br>LinkedIn: linkedin.com/in/vishnuprasathr<br>GitHub: github.com/vishnuprasath-r</p>
-  </section>
+    <div class="card">
+      <h2 class="section-title">Achievements</h2>
+      <p>🏆 Excel@Work Award (WNS-Vuram)<br>
+      🌟 Spotlight of the Month (Sep 2022)<br>
+      🥇 Appian Solutions Cup Winner<br>
+      🧠 Final year project “Resume Endorser” recognized<br>
+      🧪 Represented Tamil Nadu in Vignyana Pradarshini 2015</p>
+    </div>
+  </div>
 
   <footer>
     &copy; 2025 Vishnuprasath R. All rights reserved.
