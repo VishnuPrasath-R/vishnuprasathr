@@ -12,19 +12,24 @@
     }
 
     body {
-      background: linear-gradient(-45deg, #000, #111, #050505, #0f0f0f);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
       font-family: 'Segoe UI', sans-serif;
       color: #fff;
       padding: 2rem;
       overflow-x: hidden;
+      position: relative;
+      z-index: 1;
     }
 
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('B8C65140-0AA8-4145-ABA1-CC6FF6453997.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      filter: brightness(0.3) blur(2px);
     }
 
     h1, h2 {
@@ -104,20 +109,19 @@
   </div>
 
   <div class="container">
-
     <div class="card">
       <h2>Professional Summary</h2>
       <ul>
-        <li>3.2 years of experience in BPM, application development, and UI/UX design.</li>
+        <li>3 years of experience in BPM, application development, and UI/UX design.</li>
         <li>Skilled in MySQL, Agile methodologies, and problem-solving.</li>
-        <li>Effective communicator in English and Tamil.</li>
+       
       </ul>
     </div>
 
     <div class="card">
       <h2>Work Experience</h2>
       <ul>
-        <li><strong>WNS-Vuram – Associate Technical Consultant (Jul 2022–Present)</strong></li>
+        <li><strong>WNS-Vuram – Associate Technical Consultant (Jul 2022–Apr 2025)</strong></li>
         <li>Built SCM app that won Appian Solutions Cup 2022.</li>
         <li>Developed features for Dynamic Case Management (DCM).</li>
         <li>Contributed to GAF (Generic Approval Framework) v13 and v14.</li>
@@ -146,7 +150,6 @@
         <li>Represented Tamil Nadu in Vignyana Pradarshini 2015 (Physics experiment).</li>
       </ul>
     </div>
-
   </div>
 
   <footer>
