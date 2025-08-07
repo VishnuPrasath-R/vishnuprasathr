@@ -2,10 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Vishnu Prasath R</title>
+  <title>Vishnuprasath R</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      font-size: 60px;
+      color: #0f0;
+      text-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+      animation: glitch 2s infinite;
+      margin: 0;
+    }
+
+    img {
+      width: 350px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #0f0;
+      margin-top: 30px;
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; transform: translate(0, 0); }
+      20% { text-shadow: 2px 2px #f00, -2px -2px #00f; transform: translate(1px, -1px); }
+      40% { text-shadow: -2px -2px #0f0, 2px 2px #0ff; transform: translate(-1px, 1px); }
+      60% { text-shadow: 1px 1px #f0f, -1px -1px #ff0; transform: translate(0.5px, -0.5px); }
+      80% { text-shadow: -1px -1px #0f0, 1px 1px #f00; transform: translate(-0.5px, 0.5px); }
+      100% { text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; transform: translate(0, 0); }
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1 style="font-size: 60px;">Hi Im Vishnu Prasath R (Vamps_J) I bought this domain to build a website from scratch in my free time. But im very busy so I only have this meme for you now.</h1>
-<img src="pic1.JPG" alt="My Photo" style="width: 600px; height: auto;">
+  <h1>Vishnu Prasath R</h1>
+    <h1>Vamps_J</h1>
+  <img src="pic1.JPG" alt="Vishnu Prasath R">
 </body>
 </html>
