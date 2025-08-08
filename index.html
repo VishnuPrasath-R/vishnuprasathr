@@ -122,7 +122,7 @@ section {padding: 16px 12px;}
 </div>
 
 <div class="kpi-row" aria-hidden="false" style="margin-top:18px">
-<!-- KPIs (values derived from uploaded resume). Source: uploaded resume file. -->
+
 <div class="kpi">
 <span class="num" data-target="3.5">0</span>
 <span class="label">Years Experience</span>
@@ -167,9 +167,9 @@ section {padding: 16px 12px;}
 
 <main class="container">
 <div class="grid">
-<!-- Left: content -->
+
 <div>
-<!-- About / Summary -->
+
 <section id="about" class="card fade-in">
 <div class="section-head"><h3>Professional Summary</h3></div>
 <p style="color:var(--muted);margin-top:6px">
@@ -179,11 +179,11 @@ teamwork, and effective communication skills.
 </p>
 </section>
 
-<!-- Experience -->
+
 <section id="experience" class="card fade-in">
 <div class="section-head">
 <h3>Work Experience</h3>
-<small style="color:var(--muted)">July 2022 – Present</small>
+<small style="color:var(--muted)">March 2022 – Present</small>
 </div>
 <div class="timeline">
 <div class="timeline-item">
@@ -221,7 +221,7 @@ July 2022 – April 2025
 </div>
 </section>
 
-<!-- Skills -->
+
 <section id="skills" class="card fade-in">
 <div class="section-head"><h3>Skills</h3></div>
 
@@ -264,7 +264,7 @@ July 2022 – April 2025
 </div>
 </section>
 
-<!-- Education -->
+
 <section id="education" class="card fade-in">
 <div class="section-head"><h3>Education</h3></div>
 <div class="timeline">
@@ -279,7 +279,7 @@ July 2022 – April 2025
 </div>
 </section>
 
-<!-- Achievements -->
+
 <section id="achievements" class="card fade-in">
 <div class="section-head"><h3>Achievements</h3></div>
 <div class="ach-list">
@@ -292,7 +292,7 @@ July 2022 – April 2025
 </div>
 </section>
 
-<!-- Contact -->
+
 <section id="contact" class="card fade-in">
 <div class="section-head"><h3>Contact</h3></div>
 <p style="color:var(--muted)">Email: <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> • Location: Chennai</p>
@@ -301,7 +301,7 @@ July 2022 – April 2025
 
 </div>
 
-<!-- Right: sidebar -->
+
 <aside>
 <div class="card fade-in">
 <h3 style="margin-top:0">Snapshot</h3>
@@ -352,7 +352,7 @@ L2 Appian Certified Senior Developer — 3+ years experience. Strong in Appian d
 </main>
 
 <script>
-// KPI counter animation
+
 document.addEventListener('DOMContentLoaded', () => {
 const counters = document.querySelectorAll('.kpi .num');
 counters.forEach(el => {
@@ -373,13 +373,13 @@ el.textContent = isFloat ? current.toFixed(2) : Math.round(current);
 }, stepTime);
 });
 
-// Skill bars reveal
+
 document.querySelectorAll('.bar > i').forEach(el => {
 const w = el.dataset.width || '60%';
 setTimeout(()=> el.style.width = w, 400);
 });
 
-// Scroll reveal
+
 const obs = new IntersectionObserver((entries) => {
 entries.forEach(e => {
 if (e.isIntersecting) e.target.classList.add('show');
@@ -387,9 +387,8 @@ if (e.isIntersecting) e.target.classList.add('show');
 }, {threshold: .12});
 document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 
-// Download resume button behavior
 document.getElementById('downloadBtn').addEventListener('click', () => {
-// The default assumption: user places a PDF named '.pdf' in same folder.
+
 const filename = 'Vishnu-Prasath-R-Resume.pdf';
 const a = document.createElement('a');
 a.href = filename;
@@ -398,7 +397,7 @@ a.click();
 });
 });
 
-// Smooth nav
+
 document.querySelectorAll('nav a').forEach(a => {
 a.addEventListener('click', e => {
 e.preventDefault();
