@@ -147,7 +147,11 @@ height: 40px;
   margin-top: 0;                  
 }
 
-
+.total-years {
+  font-weight: bold;
+  font-size: 1.6em; /* Bigger text */
+   /* Matches your theme */
+}
 @media (max-width: 480px) {
   .countdown-component .countup {
     gap: 4px;
@@ -180,7 +184,43 @@ height: 40px;
 <a href="#education">Education</a>
 <a href="#achievements">Achievements</a>
 </nav>
+<script>
+(function () {
+  function updateCountUp() {
+    const startDate = new Date("March 2, 2022 00:00:00").getTime();
+    const now = new Date().getTime();
+    const elapsed = now - startDate;
 
+    if (elapsed < 0) return;
+
+    const years = Math.floor(elapsed / (1000 * 60 * 60 * 24 * 365.25));
+    const days = Math.floor((elapsed % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((elapsed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((elapsed % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((elapsed % (1000 * 60)) / 1000);
+    const milliseconds = Math.floor(elapsed % 1000);
+
+    // Calculate total years with 2 decimal places
+    const totalYears = (elapsed / (1000 * 60 * 60 * 24 * 365.25)).toFixed(2);
+
+    // Update main counter
+    document.getElementById("years").textContent = String(years).padStart(2, '0');
+    document.getElementById("days").textContent = String(days).padStart(3, '0');
+    document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+    document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+    document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    document.getElementById("milliseconds").textContent = String(milliseconds).padStart(3, '0');
+
+    // Update total years wherever needed
+    document.querySelectorAll(".total-years").forEach(el => {
+      el.textContent = totalYears;
+    });
+  }
+
+  setInterval(updateCountUp, 1);
+  updateCountUp();
+})();
+</script>
 <header class="hero">
 <div class="gradient-blob blob1" aria-hidden="true"></div>
 <div class="gradient-blob blob2" aria-hidden="true"></div>
@@ -206,7 +246,8 @@ height: 40px;
 <div class="kpi-row" aria-hidden="false" style="margin-top:18px">
 
 <div class="kpi">
-<span class="num" data-target="3.5">0</span>
+<span class="total-years" data-target="0"></span>
+<br>
 <span class="label">Years Experience</span>
 </div>
 
