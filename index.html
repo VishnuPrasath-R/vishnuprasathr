@@ -124,19 +124,12 @@ section {padding: 16px 12px;}
   min-width: 60px;
   flex: 1 1 auto;
 }
-
 .countdown-component .card {
-  background: rgba(179, 136, 255, 0.1);
-  border: 2px solid #b388ff;
-  padding: 10px 5px;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  font-weight: bold;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 15px #b388ff;
-  width: 100%;
+  padding: 8px 6px;
+  font-size: clamp(1.2rem, 3vw, 2.2rem); /* smaller but readable */
+  border-radius: 8px;
+  box-shadow: 0 0 10px #b388ff;
 }
-
 .countdown-component .label {
   margin-top: 5px;
   font-size: clamp(0.6rem, 1.5vw, 0.9rem);
@@ -144,12 +137,16 @@ section {padding: 16px 12px;}
 }
 
 .countdown-component .colon {
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.2rem, 5vw, 2.2rem);
   font-weight: bold;
   color: #b388ff;
   animation: countdown-blink 1s step-start infinite;
-  align-self: center;
-  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 2px;
+  margin-top: 6px; 
 }
 
 @keyframes countdown-blink {
