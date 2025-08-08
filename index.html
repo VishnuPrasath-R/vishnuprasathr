@@ -1,159 +1,441 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishnu Prasath R - Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Vishnu Prasath R — Portfolio</title>
+<meta name="description" content="Vishnu Prasath R — L2 Appian Certified Senior Developer. Portfolio & resume." />
+<style>
+/* Reset + base */
+:root{
+--bg1: #0f1724;
+--bg2: #071126;
+--accent: #7b61ff;
+--accent2: #00d4ff;
+--glass: rgba(255,255,255,0.06);
+--muted: rgba(255,255,255,0.65);
+--card: rgba(255,255,255,0.03);
+--mono: 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family:var(--mono);
+background: linear-gradient(180deg,var(--bg1),var(--bg2));
+color:#e9f0ff;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+overflow-x:hidden;
+}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      color: #f0f0f0;
-      padding: 2rem;
-      overflow-x: hidden;
-      position: relative;
-      z-index: 1;
-    }
+/* Decorative animated gradient + floating blobs */
+.hero{
+position:relative;
+min-height:72vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:48px 24px;
+text-align:center;
+overflow:hidden;
+}
+.gradient-blob{
+position:absolute;
+filter:blur(80px) saturate(120%);
+opacity:0.8;
+mix-blend-mode:screen;
+animation: float 10s ease-in-out infinite;
+border-radius:40%;
+transform-origin:center;
+}
+.blob1{width:420px;height:420px;left:-10%;top:-10%;background:linear-gradient(45deg,var(--accent),#ff6b9a); animation-duration:12s}
+.blob2{width:320px;height:320px;right:-8%;bottom:-8%;background:linear-gradient(45deg,var(--accent2),#3bf5ff); animation-duration:14s}
+@keyframes float{
+0%{transform:translateY(0) rotate(0deg)}
+50%{transform:translateY(20px) rotate(6deg)}
+100%{transform:translateY(0) rotate(0deg)}
+}
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('bg11.jpeg') no-repeat center center fixed;
-      background-size: cover;
-      z-index: -1;
-      filter: brightness(0.2) blur(2px);
-    }
+.container{max-width:1100px;margin:0 auto;width:100%}
+.card{
+background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+backdrop-filter: blur(6px);
+border-radius:14px;
+padding:20px;
+box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+border:1px solid rgba(255,255,255,0.04);
+}
 
-    h1, h2 {
-      text-align: center;
-      color: #ff6600; /* BO3 orange */
-      margin-bottom: 1rem;
-    }
+h1{font-size:2.2rem;margin:0 0 8px}
+h2{font-size:1.05rem;margin:0;color:var(--muted)}
+.sub{
+font-size:0.95rem;color:var(--muted);margin-top:8px;
+}
 
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+/* top hero content */
+.hero-inner{
+position:relative;z-index:4;
+max-width:900px;
+}
+.hero-cta{
+margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+}
+.btn{
+padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
+background:linear-gradient(90deg,var(--accent),var(--accent2));
+color:#071126;box-shadow:0 8px 30px rgba(123,97,255,0.14);
+}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(123,97,255,0.18)}
 
-    .card {
-      background: rgba(30, 30, 30, 0.7);
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 102, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+/* KPI counters */
+.kpi-row{display:flex;gap:14px;margin-top:22px;justify-content:center;flex-wrap:wrap}
+.kpi{
+min-width:160px;padding:14px;border-radius:12px;background:var(--card);text-align:center;
+}
+.kpi .num{font-size:1.6rem;font-weight:800;display:block}
+.kpi .label{font-size:0.9rem;color:var(--muted);margin-top:6px}
 
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 30px rgba(255, 102, 0, 0.4);
-    }
+/* layout sections */
+main{padding:28px 20px 80px}
+.grid{
+display:grid;grid-template-columns: 1fr 360px;gap:20px;
+}
+@media (max-width:900px){ .grid{grid-template-columns:1fr} .kpi-row{justify-content:flex-start} }
 
-    ul {
-      padding-left: 1.2rem;
-      line-height: 1.6;
-    }
+/* profile card */
+.profile{
+display:flex;gap:14px;align-items:center;
+}
+.avatar{
+width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.6rem;color:#04162a;
+box-shadow: 0 10px 30px rgba(2,6,23,0.5);
+}
+.contact{font-size:0.95rem;color:var(--muted);margin-top:8px}
 
-    li {
-      color: #ddd;
-      margin-bottom: 0.5rem;
-    }
+/* section cards */
+section{margin-bottom:20px}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.section-head h3{margin:0;font-size:1.05rem}
+.timeline{display:flex;flex-direction:column;gap:12px}
+.timeline-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border-left:3px solid rgba(255,255,255,0.04)}
 
-    p {
-      color: #ccc;
-      line-height: 1.6;
-    }
+/* skills */
+.skill{margin-bottom:10px}
+.skill .row{display:flex;justify-content:space-between;font-size:0.9rem;color:var(--muted);margin-bottom:6px}
+.bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,.98)}
 
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+/* achievements */
+.ach-list{display:grid;grid-template-columns:1fr;gap:8px}
+.ach{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:0.95rem}
 
-    .header img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #ff6600;
-      margin-bottom: 1rem;
-    }
+/* footer */
+footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #999;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+/* small animations & reveal on scroll */
+.fade-in{opacity:0;transform:translateY(10px);transition:all 700ms ease-out}
+.fade-in.show{opacity:1;transform:none}
+nav{position:fixed;left:20px;top:20px;z-index:10}
+nav a{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none;margin-right:8px;font-size:0.9rem}
+nav a:hover{color:white}
+</style>
 </head>
 <body>
-  <div class="header">
-    <img src="dp11.jpeg" alt="Vishnu Prasath R" />
-    <h1>Vishnu Prasath R</h1>
-    <p>L2 Appian Certified Senior Developer • Chennai • Email: vishnugarrix@gmail.com</p>
-  </div>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#achievements">Achievements</a>
+</nav>
 
-  <div class="container">
-    <div class="card">
-      <h2>Professional Summary</h2>
-      <ul>
-        <li>3+ years of experience in BPM, application development, and UI/UX design.</li>
-        <li>Skilled in MySQL, Agile methodologies, and problem-solving.</li>
-     
-      </ul>
-    </div>
+<header class="hero">
+<div class="gradient-blob blob1" aria-hidden="true"></div>
+<div class="gradient-blob blob2" aria-hidden="true"></div>
 
-    <div class="card">
-      <h2>Work Experience</h2>
-      <ul>
-        <li><strong>WNS-Vuram – Associate Technical Consultant (Jul 2022–Apr 2025)</strong></li>
-        <li>Built SCM app that won Appian Solutions Cup 2022.</li>
-        <li>Developed features for Dynamic Case Management (DCM).</li>
-        <li>Contributed to GAF (Generic Approval Framework) v13 and v14.</li>
-        <li>Worked on Chola MS insurance project.</li>
-        <li><strong>WNS-Vuram – Appian Intern (Mar–Jul 2022)</strong></li>
-        <li>Built Form Builder POC and collaborated on AI + PDF integration.</li>
-      </ul>
-    </div>
+<div class="container hero-inner">
+<div class="card fade-in show">
+<div style="display:flex;gap:18px;align-items:center;justify-content:center;flex-direction:column">
+<div class="profile">
+<div class="avatar">V</div>
+<div style="text-align:left">
+<h1>Vishnu Prasath R</h1>
+<h2>L2 Appian Certified Senior Developer</h2>
+<div class="sub">Dynamic Appian developer skilled in BPM, UI/UX, MySQL, and Agile methodologies.</div>
+<div class="contact">📍 Chennai &nbsp; • &nbsp; ✉️ <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> &nbsp; • &nbsp; 📞 +91 8056053449</div>
+</div>
+</div>
 
-    <div class="card">
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Primary:</strong> Appian, Data Modeling, Complex UI, BPM, MySQL, Agile, UI/UX</li>
-        <li><strong>Secondary:</strong> Data Science, Machine Learning, AI, Presentation Skills</li>
-      </ul>
-    </div>
+<div class="hero-cta">
+<button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire / Contact</button>
+<button class="btn ghost" id="downloadBtn">Download Resume (PDF)</button>
+</div>
 
-    <div class="card">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Excel@Work award for outstanding performance at WNS-Vuram.</li>
-        <li>Spotlight of the Month – September 2022.</li>
-        <li>1st place in Appian Solutions Cup 2022 (SCM App).</li>
-        <li>Best Final Year Project – “Resume Endorser”.</li>
-        <li>Winner of multiple paper presentations in college.</li>
-        <li>Represented Tamil Nadu in Vignyana Pradarshini 2015 (Physics experiment).</li>
-      </ul>
-    </div>
-  </div>
+<div class="kpi-row" aria-hidden="false" style="margin-top:18px">
+<!-- KPIs (values derived from uploaded resume). Source: uploaded resume file. -->
+<div class="kpi">
+<span class="num" data-target="3">0</span>
+<span class="label">Years Experience</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="4">0</span>
+<span class="label">Key Projects</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="6">0</span>
+<span class="label">Achievements</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="8.77">0</span>
+<span class="label">Top CGPA</span>
+</div>
+</div>
 
-  <footer>
-    &copy; 2025 Vishnu Prasath R. All rights reserved.
-  </footer>
+<div style="margin-top:10px;font-size:0.85rem;color:var(--muted)">
+Content below is taken from the uploaded resume file. [oai_citation:1‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)
+</div>
+</div>
+</div>
+</div>
+</header>
+
+<main class="container">
+<div class="grid">
+<!-- Left: content -->
+<div>
+<!-- About / Summary -->
+<section id="about" class="card fade-in">
+<div class="section-head"><h3>Professional Summary</h3></div>
+<p style="color:var(--muted);margin-top:6px">
+Dynamic and results-driven Appian Certified Senior Developer with around 3 years of project experience in business process management,
+application development, and UI/UX design. Skilled in MySQL, Agile methodologies, and advanced problem-solving techniques. Recognised for exceptional performance,
+teamwork, and effective communication in English and Tamil. (Source: resume). [oai_citation:2‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)
+</p>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="card fade-in">
+<div class="section-head">
+<h3>Work Experience</h3>
+<small style="color:var(--muted)">July 2022 – Present</small>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<strong>WNS-Vuram — Associate Technical Consultant</strong>
+<div style="color:var(--muted);font-size:0.95rem;margin-top:6px">
+July 2022 – Present
+</div>
+<ul style="margin-top:8px;color:var(--muted)">
+<li>Transitioned from intern to full-time; contributed to R&D and project teams.</li>
+<li>Developed screens for a Supply Chain Management (SCM) app — awarded 1st place in Appian Solutions Cup 2022.</li>
+<li>Designed Dynamic Case Management features, multitenancy, and Outlook integration.</li>
+<li>Contributed to the Generic Approval Framework (GAF) for versions 13.0 & 14.0.</li>
+<li>Worked on Chola MS insurance project (insurance domain exposure).</li>
+</ul>
+</div>
+
+<div class="timeline-item">
+<strong>WNS-Vuram — Appian Developer Intern</strong>
+<div style="color:var(--muted);font-size:0.95rem;margin-top:6px">March 2022 – July 2022</div>
+<ul style="margin-top:8px;color:var(--muted)">
+<li>Completed intensive Appian training; built a Form Builder PoC.</li>
+<li>Collaborated with Vivas AI team to integrate AI & PDF generation into GAF.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="card fade-in">
+<div class="section-head"><h3>Skills</h3></div>
+
+<div style="display:flex;gap:18px;flex-wrap:wrap">
+<div style="flex:1;min-width:220px">
+<h4 style="margin:0 0 8px">Primary Skills</h4>
+<div class="skill">
+<div class="row"><span>Appian Development</span><span>90%</span></div>
+<div class="bar"><i data-width="90%"></i></div>
+</div>
+<div class="skill">
+<div class="row"><span>Business Process Management</span><span>85%</span></div>
+<div class="bar"><i data-width="85%"></i></div>
+</div>
+<div class="skill">
+<div class="row"><span>Complex UI Design & Backend Logic</span><span>82%</span></div>
+<div class="bar"><i data-width="82%"></i></div>
+</div>
+<div class="skill">
+<div class="row"><span>MySQL / Relational DBs</span><span>78%</span></div>
+<div class="bar"><i data-width="78%"></i></div>
+</div>
+</div>
+
+<div style="flex:1;min-width:220px">
+<h4 style="margin:0 0 8px">Secondary Skills</h4>
+<div class="skill">
+<div class="row"><span>Data Science & ML</span><span>60%</span></div>
+<div class="bar"><i data-width="60%"></i></div>
+</div>
+<div class="skill">
+<div class="row"><span>UI/UX Design</span><span>72%</span></div>
+<div class="bar"><i data-width="72%"></i></div>
+</div>
+<div class="skill">
+<div class="row"><span>Agile Methodologies</span><span>80%</span></div>
+<div class="bar"><i data-width="80%"></i></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Education -->
+<section id="education" class="card fade-in">
+<div class="section-head"><h3>Education</h3></div>
+<div class="timeline">
+<div class="timeline-item">
+<strong>Sri Sairam Institute of Technology, Chennai</strong>
+<div style="color:var(--muted)">B.E. in Computer Science & Engineering (2018 – 2022) — CGPA: 8.77</div>
+</div>
+<div class="timeline-item">
+<strong>SKNS PMC Vivekananda Vidyalaya, Chennai</strong>
+<div style="color:var(--muted)">CBSE 12th (2017–2018) — 77% / CBSE 10th (2015–2016) — CGPA: 8.8</div>
+</div>
+</div>
+</section>
+
+<!-- Achievements -->
+<section id="achievements" class="card fade-in">
+<div class="section-head"><h3>Achievements</h3></div>
+<div class="ach-list">
+<div class="ach">Excel@Work award for exceptional performance at WNS-Vuram.</div>
+<div class="ach">Spotlight of the month — September 2022 (Solutions team).</div>
+<div class="ach">1st place — Appian Solutions Cup 2022 (Supply Chain Management app).</div>
+<div class="ach">Best Project of the Year — "Resume Endorser" (final year project).</div>
+<div class="ach">Won several paper-presentation events during college.</div>
+<div class="ach">Represented Tamil Nadu in a physics experiment at Vignyana Pradarshini 2015.</div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="card fade-in">
+<div class="section-head"><h3>Contact & Hire</h3></div>
+<p style="color:var(--muted)">Email: <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> • Phone: +91 8056053449 • Location: Chennai</p>
+<p style="color:var(--muted);margin-top:10px">Open to Appian development, BPM, UI/UX, and full-cycle project contributions. Let's build something—reach out!</p>
+</section>
+
+</div>
+
+<!-- Right: sidebar -->
+<aside>
+<div class="card fade-in">
+<h3 style="margin-top:0">Snapshot</h3>
+<p style="color:var(--muted)">
+L2 Appian Certified Senior Developer — ~3 years experience. Strong in Appian development, BPM, UI/UX, and MySQL.
+</p>
+
+<hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
+
+<h4 style="margin-bottom:8px">Quick KPIs</h4>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+<div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
+<div style="font-weight:700;font-size:1.1rem">3</div>
+<div style="color:var(--muted)">Years</div>
+</div>
+<div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
+<div style="font-weight:700;font-size:1.1rem">1st</div>
+<div style="color:var(--muted)">Appian Cup</div>
+</div>
+<div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
+<div style="font-weight:700;font-size:1.1rem">8.77</div>
+<div style="color:var(--muted)">Top CGPA</div>
+</div>
+<div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
+<div style="font-weight:700;font-size:1.1rem">6</div>
+<div style="color:var(--muted)">Awards</div>
+</div>
+</div>
+
+<hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
+
+<h4 style="margin-bottom:8px">Tech & Tools</h4>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<span style="background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:0.85rem">Appian</span>
+<span style="background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:0.85rem">MySQL</span>
+<span style="background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:0.85rem">BPM</span>
+<span style="background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:0.85rem">UI/UX</span>
+<span style="background:rgba(255,255,255,0.02);padding:6px 8px;border-radius:8px;font-size:0.85rem">Agile</span>
+</div>
+
+<hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
+
+<h4 style="margin-bottom:8px">Resume</h4>
+<p style="color:var(--muted);font-size:0.95rem">If you'd like a PDF download, put the resume PDF file named <code>Vishnu-Prasath-R-Resume.pdf</code> in the same folder and click the button above.</p>
+</div>
+</aside>
+</div>
+
+<footer>
+<div class="card fade-in">Made with ♥ • Appian dev portfolio • Content taken from uploaded resume. [oai_citation:3‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)</div>
+</footer>
+</main>
+
+<script>
+// KPI counter animation
+document.addEventListener('DOMContentLoaded', () => {
+const counters = document.querySelectorAll('.kpi .num');
+counters.forEach(el => {
+const target = parseFloat(el.dataset.target);
+const isFloat = (String(target).indexOf('.') !== -1);
+let current = 0;
+const duration = 1200;
+const stepTime = Math.max(12, Math.floor(duration / (isFloat ? 100 : target || 1)));
+const step = target / (duration / stepTime);
+const timer = setInterval(() => {
+current += step;
+if (current >= target) {
+clearInterval(timer);
+el.textContent = isFloat ? target.toFixed(2) : Math.round(target);
+} else {
+el.textContent = isFloat ? current.toFixed(2) : Math.round(current);
+}
+}, stepTime);
+});
+
+// Skill bars reveal
+document.querySelectorAll('.bar > i').forEach(el => {
+const w = el.dataset.width || '60%';
+setTimeout(()=> el.style.width = w, 400);
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+entries.forEach(e => {
+if (e.isIntersecting) e.target.classList.add('show');
+});
+}, {threshold: .12});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Download resume button behavior
+document.getElementById('downloadBtn').addEventListener('click', () => {
+// The default assumption: user places a PDF named 'Vishnu-Prasath-R-Resume.pdf' in same folder.
+const filename = 'Vishnu-Prasath-R-Resume.pdf';
+const a = document.createElement('a');
+a.href = filename;
+a.download = filename;
+a.click();
+});
+});
+
+// Smooth nav
+document.querySelectorAll('nav a').forEach(a => {
+a.addEventListener('click', e => {
+e.preventDefault();
+const id = a.getAttribute('href').slice(1);
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
 </body>
 </html>
