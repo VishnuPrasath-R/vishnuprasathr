@@ -6,7 +6,6 @@
 <title>Vishnu Prasath R — Portfolio</title>
 <meta name="description" content="Vishnu Prasath R — L2 Appian Certified Senior Developer. Portfolio & resume." />
 <style>
-/* Reset + base */
 :root{
 --bg1: #0f1724;
 --bg2: #071126;
@@ -18,7 +17,7 @@
 --mono: 'Segoe UI', Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{height:100%;scroll-padding-top:80px}
 body{
 margin:0;
 font-family:var(--mono);
@@ -28,118 +27,67 @@ color:#e9f0ff;
 -moz-osx-font-smoothing:grayscale;
 overflow-x:hidden;
 }
-
-/* Decorative animated gradient + floating blobs */
-.hero{
-position:relative;
-min-height:72vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:48px 24px;
-text-align:center;
-overflow:hidden;
-}
-.gradient-blob{
-position:absolute;
-filter:blur(80px) saturate(120%);
-opacity:0.8;
-mix-blend-mode:screen;
-animation: float 10s ease-in-out infinite;
-border-radius:40%;
-transform-origin:center;
-}
-.blob1{width:420px;height:420px;left:-10%;top:-10%;background:linear-gradient(45deg,var(--accent),#ff6b9a); animation-duration:12s}
-.blob2{width:320px;height:320px;right:-8%;bottom:-8%;background:linear-gradient(45deg,var(--accent2),#3bf5ff); animation-duration:14s}
-@keyframes float{
-0%{transform:translateY(0) rotate(0deg)}
-50%{transform:translateY(20px) rotate(6deg)}
-100%{transform:translateY(0) rotate(0deg)}
-}
-
+.hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:48px 24px;text-align:center;overflow:hidden;}
+.gradient-blob{position:absolute;filter:blur(80px) saturate(120%);opacity:0.8;mix-blend-mode:screen;animation: float 10s ease-in-out infinite;border-radius:40%;transform-origin:center;}
+.blob1{width:420px;height:420px;left:-10%;top:-10%;background:linear-gradient(45deg,var(--accent),#ff6b9a);animation-duration:12s}
+.blob2{width:320px;height:320px;right:-8%;bottom:-8%;background:linear-gradient(45deg,var(--accent2),#3bf5ff);animation-duration:14s}
+@keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(20px) rotate(6deg)}100%{transform:translateY(0) rotate(0deg)}}
 .container{max-width:1100px;margin:0 auto;width:100%}
-.card{
-background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-backdrop-filter: blur(6px);
-border-radius:14px;
-padding:20px;
-box-shadow: 0 8px 30px rgba(2,6,23,0.6);
-border:1px solid rgba(255,255,255,0.04);
-}
-
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:14px;padding:20px;box-shadow: 0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.04);}
 h1{font-size:2.2rem;margin:0 0 8px}
 h2{font-size:1.05rem;margin:0;color:var(--muted)}
-.sub{
-font-size:0.95rem;color:var(--muted);margin-top:8px;
-}
-
-/* top hero content */
-.hero-inner{
-position:relative;z-index:4;
-max-width:900px;
-}
-.hero-cta{
-margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-}
-.btn{
-padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;
-background:linear-gradient(90deg,var(--accent),var(--accent2));
-color:#071126;box-shadow:0 8px 30px rgba(123,97,255,0.14);
-}
+.sub{font-size:0.95rem;color:var(--muted);margin-top:8px;}
+.hero-inner{position:relative;z-index:4;max-width:900px;}
+.hero-cta{margin-top:18px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600;background:linear-gradient(90deg,var(--accent),var(--accent2));color:#071126;box-shadow:0 8px 30px rgba(123,97,255,0.14);}
 .btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(123,97,255,0.18)}
-
-/* KPI counters */
 .kpi-row{display:flex;gap:14px;margin-top:22px;justify-content:center;flex-wrap:wrap}
-.kpi{
-min-width:160px;padding:14px;border-radius:12px;background:var(--card);text-align:center;
-}
+.kpi{min-width:160px;padding:14px;border-radius:12px;background:var(--card);text-align:center;}
 .kpi .num{font-size:1.6rem;font-weight:800;display:block}
 .kpi .label{font-size:0.9rem;color:var(--muted);margin-top:6px}
-
-/* layout sections */
 main{padding:28px 20px 80px}
-.grid{
-display:grid;grid-template-columns: 1fr 360px;gap:20px;
-}
+.grid{display:grid;grid-template-columns: 1fr 360px;gap:20px;}
 @media (max-width:900px){ .grid{grid-template-columns:1fr} .kpi-row{justify-content:flex-start} }
-
-/* profile card */
-.profile{
-display:flex;gap:14px;align-items:center;
-}
-.avatar{
-width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.6rem;color:#04162a;
-box-shadow: 0 10px 30px rgba(2,6,23,0.5);
-}
+.profile{display:flex;gap:14px;align-items:center;}
+.avatar{width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.6rem;color:#04162a;box-shadow: 0 10px 30px rgba(2,6,23,0.5);}
 .contact{font-size:0.95rem;color:var(--muted);margin-top:8px}
-
-/* section cards */
 section{margin-bottom:20px}
 .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .section-head h3{margin:0;font-size:1.05rem}
 .timeline{display:flex;flex-direction:column;gap:12px}
 .timeline-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border-left:3px solid rgba(255,255,255,0.04)}
-
-/* skills */
 .skill{margin-bottom:10px}
 .skill .row{display:flex;justify-content:space-between;font-size:0.9rem;color:var(--muted);margin-bottom:6px}
-.bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden}
-.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0%;transition:width 900ms cubic-bezier(.2,.9,.3,.98)}
-
-/* achievements */
+.bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden;position:relative}
+.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:100%;position:absolute;top:0;left:0;}
+.bar::after{content:attr(data-level);position:absolute;right:10px;top:-24px;color:var(--muted);font-size:0.85rem;}
 .ach-list{display:grid;grid-template-columns:1fr;gap:8px}
 .ach{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:0.95rem}
-
-/* footer */
 footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
-
-/* small animations & reveal on scroll */
 .fade-in{opacity:0;transform:translateY(10px);transition:all 700ms ease-out}
 .fade-in.show{opacity:1;transform:none}
 nav{position:fixed;left:20px;top:20px;z-index:10}
 nav a{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none;margin-right:8px;font-size:0.9rem}
 nav a:hover{color:white}
+@media (max-width: 768px) {
+.hero {padding: 32px 16px;min-height: auto;}
+.hero-inner {padding: 0 8px;}
+h1 {font-size: 1.7rem;}
+h2 {font-size: 1rem;}
+.btn {width: 100%;max-width: 280px;font-size: 0.95rem;}
+.hero-cta {flex-direction: column;gap: 10px;}
+.grid {display: flex;flex-direction: column;}
+aside {margin-top: 20px;}
+.kpi-row {flex-direction: column;align-items: stretch;}
+.kpi {width: 100%;min-width: unset;}
+.avatar {width: 72px;height: 72px;font-size: 1.4rem;}
+.profile {flex-direction: column;text-align: center;}
+nav {left: 10px;right: 10px;top: 10px;display: flex;flex-wrap: wrap;justify-content: center;gap: 8px;}
+nav a {padding: 6px 8px;font-size: 0.8rem;}
+footer {font-size: 0.85rem;}
+section {padding: 16px 12px;}
+.timeline-item {font-size: 0.95rem;}
+}
 </style>
 </head>
 <body>
@@ -163,38 +111,54 @@ nav a:hover{color:white}
 <div style="text-align:left">
 <h1>Vishnu Prasath R</h1>
 <h2>L2 Appian Certified Senior Developer</h2>
-<div class="sub">Dynamic Appian developer skilled in BPM, UI/UX, MySQL, and Agile methodologies.</div>
-<div class="contact">📍 Chennai &nbsp; • &nbsp; ✉️ <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> &nbsp; • &nbsp; 📞 +91 8056053449</div>
+<div class="sub">Appian Expert skilled in BPM, UI/UX, MySQL and Agile methodologies.</div>
+<div class="contact">📍 Chennai &nbsp; • &nbsp; ✉️ <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> &nbsp;  &nbsp;</div>
 </div>
 </div>
 
 <div class="hero-cta">
-<button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire / Contact</button>
+
 <button class="btn ghost" id="downloadBtn">Download Resume (PDF)</button>
 </div>
 
 <div class="kpi-row" aria-hidden="false" style="margin-top:18px">
 <!-- KPIs (values derived from uploaded resume). Source: uploaded resume file. -->
 <div class="kpi">
-<span class="num" data-target="3">0</span>
+<span class="num" data-target="3.5">0</span>
 <span class="label">Years Experience</span>
 </div>
 <div class="kpi">
-<span class="num" data-target="4">0</span>
-<span class="label">Key Projects</span>
+<span class="num" data-target="5">0</span>
+<span class="label">Projects Delevered</span>
 </div>
 <div class="kpi">
-<span class="num" data-target="6">0</span>
-<span class="label">Achievements</span>
+<span class="num" data-target="2">0</span>
+<span class="label">Projects In Dev</span>
 </div>
 <div class="kpi">
 <span class="num" data-target="8.77">0</span>
-<span class="label">Top CGPA</span>
+<span class="label">UNI CGPA</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="5">0</span>
+<span class="label">Clients Handled</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="3">5</span>
+<span class="label">Client Countries</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="2">2</span>
+<span class="label">ORG Worked</span>
+</div>
+<div class="kpi">
+<span class="num" data-target="10">2</span>
+<span class="label">Awards</span>
 </div>
 </div>
 
 <div style="margin-top:10px;font-size:0.85rem;color:var(--muted)">
-Content below is taken from the uploaded resume file. [oai_citation:1‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)
+
 </div>
 </div>
 </div>
@@ -209,9 +173,9 @@ Content below is taken from the uploaded resume file. [oai_citation:1‡Vishnu P
 <section id="about" class="card fade-in">
 <div class="section-head"><h3>Professional Summary</h3></div>
 <p style="color:var(--muted);margin-top:6px">
-Dynamic and results-driven Appian Certified Senior Developer with around 3 years of project experience in business process management,
+Dynamic and results-driven Appian Certified Senior Developer with around 3+ years of project experience in business process management,
 application development, and UI/UX design. Skilled in MySQL, Agile methodologies, and advanced problem-solving techniques. Recognised for exceptional performance,
-teamwork, and effective communication in English and Tamil. (Source: resume). [oai_citation:2‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)
+teamwork, and effective communication skills.
 </p>
 </section>
 
@@ -223,9 +187,19 @@ teamwork, and effective communication in English and Tamil. (Source: resume). [o
 </div>
 <div class="timeline">
 <div class="timeline-item">
+<strong>Deloitte — Consultant</strong>
+<div style="color:var(--muted);font-size:0.95rem;margin-top:6px">
+April 2025 – Present
+</div>
+<ul style="margin-top:8px;color:var(--muted)">
+<li>Working on a high impact project with multiple applications for fortune 100 US client.</li>
+
+</ul>
+</div>
+<div class="timeline-item">
 <strong>WNS-Vuram — Associate Technical Consultant</strong>
 <div style="color:var(--muted);font-size:0.95rem;margin-top:6px">
-July 2022 – Present
+July 2022 – April 2025
 </div>
 <ul style="margin-top:8px;color:var(--muted)">
 <li>Transitioned from intern to full-time; contributed to R&D and project teams.</li>
@@ -255,19 +229,19 @@ July 2022 – Present
 <div style="flex:1;min-width:220px">
 <h4 style="margin:0 0 8px">Primary Skills</h4>
 <div class="skill">
-<div class="row"><span>Appian Development</span><span>90%</span></div>
+<div class="row"><span>Appian Development</span><span>Expert</span></div>
 <div class="bar"><i data-width="90%"></i></div>
 </div>
 <div class="skill">
-<div class="row"><span>Business Process Management</span><span>85%</span></div>
+<div class="row"><span>Business Process Management</span><span>Expert</span></div>
 <div class="bar"><i data-width="85%"></i></div>
 </div>
 <div class="skill">
-<div class="row"><span>Complex UI Design & Backend Logic</span><span>82%</span></div>
+<div class="row"><span>Complex UI Design & Backend Logic</span><span>Expert</span></div>
 <div class="bar"><i data-width="82%"></i></div>
 </div>
 <div class="skill">
-<div class="row"><span>MySQL / Relational DBs</span><span>78%</span></div>
+<div class="row"><span>MySQL / Relational DBs</span><span>Expert</span></div>
 <div class="bar"><i data-width="78%"></i></div>
 </div>
 </div>
@@ -275,15 +249,15 @@ July 2022 – Present
 <div style="flex:1;min-width:220px">
 <h4 style="margin:0 0 8px">Secondary Skills</h4>
 <div class="skill">
-<div class="row"><span>Data Science & ML</span><span>60%</span></div>
+<div class="row"><span>Data Science & ML</span><span>Intermediate</span></div>
 <div class="bar"><i data-width="60%"></i></div>
 </div>
 <div class="skill">
-<div class="row"><span>UI/UX Design</span><span>72%</span></div>
+<div class="row"><span>UI/UX Design</span><span>Expert</span></div>
 <div class="bar"><i data-width="72%"></i></div>
 </div>
 <div class="skill">
-<div class="row"><span>Agile Methodologies</span><span>80%</span></div>
+<div class="row"><span>Agile Methodologies</span><span>Expert</span></div>
 <div class="bar"><i data-width="80%"></i></div>
 </div>
 </div>
@@ -320,9 +294,9 @@ July 2022 – Present
 
 <!-- Contact -->
 <section id="contact" class="card fade-in">
-<div class="section-head"><h3>Contact & Hire</h3></div>
-<p style="color:var(--muted)">Email: <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> • Phone: +91 8056053449 • Location: Chennai</p>
-<p style="color:var(--muted);margin-top:10px">Open to Appian development, BPM, UI/UX, and full-cycle project contributions. Let's build something—reach out!</p>
+<div class="section-head"><h3>Contact</h3></div>
+<p style="color:var(--muted)">Email: <a href="mailto:vishnugarrix@gmail.com" style="color:inherit;text-decoration:underline">vishnugarrix@gmail.com</a> • Location: Chennai</p>
+
 </section>
 
 </div>
@@ -332,7 +306,7 @@ July 2022 – Present
 <div class="card fade-in">
 <h3 style="margin-top:0">Snapshot</h3>
 <p style="color:var(--muted)">
-L2 Appian Certified Senior Developer — ~3 years experience. Strong in Appian development, BPM, UI/UX, and MySQL.
+L2 Appian Certified Senior Developer — 3+ years experience. Strong in Appian development, BPM, UI/UX, and MySQL.
 </p>
 
 <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
@@ -340,19 +314,19 @@ L2 Appian Certified Senior Developer — ~3 years experience. Strong in Appian d
 <h4 style="margin-bottom:8px">Quick KPIs</h4>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
 <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
-<div style="font-weight:700;font-size:1.1rem">3</div>
+<div style="font-weight:700;font-size:1.1rem">3.5</div>
 <div style="color:var(--muted)">Years</div>
 </div>
 <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
 <div style="font-weight:700;font-size:1.1rem">1st</div>
-<div style="color:var(--muted)">Appian Cup</div>
+<div style="color:var(--muted)">Appian Solutions Cup 2022</div>
 </div>
 <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
 <div style="font-weight:700;font-size:1.1rem">8.77</div>
-<div style="color:var(--muted)">Top CGPA</div>
+<div style="color:var(--muted)">UNI CGPA</div>
 </div>
 <div style="background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;text-align:center">
-<div style="font-weight:700;font-size:1.1rem">6</div>
+<div style="font-weight:700;font-size:1.1rem">10</div>
 <div style="color:var(--muted)">Awards</div>
 </div>
 </div>
@@ -370,14 +344,10 @@ L2 Appian Certified Senior Developer — ~3 years experience. Strong in Appian d
 
 <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:12px 0">
 
-<h4 style="margin-bottom:8px">Resume</h4>
-<p style="color:var(--muted);font-size:0.95rem">If you'd like a PDF download, put the resume PDF file named <code>Vishnu-Prasath-R-Resume.pdf</code> in the same folder and click the button above.</p>
-</div>
-</aside>
-</div>
+
 
 <footer>
-<div class="card fade-in">Made with ♥ • Appian dev portfolio • Content taken from uploaded resume. [oai_citation:3‡Vishnu Prasath R Resume.pdf](file-service://file-VkNKKegA5oLn4W2aVafqHC)</div>
+<div class="card fade-in">Made with ♥ by Vishnu Prasath R, Thanks for your time! </div>
 </footer>
 </main>
 
@@ -439,3 +409,4 @@ document.getElementById(id).scrollIntoView({behavior:'smooth'});
 </script>
 </body>
 </html>
+
