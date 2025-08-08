@@ -110,45 +110,60 @@ section {padding: 16px 12px;}
 
 .countdown-component .countup {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;      
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
-  max-width: 100%;
+  gap: 6px;               
 }
 
 .countdown-component .unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 60px;
-  flex: 1 1 auto;
+  min-width: auto;         
 }
+
 .countdown-component .card {
-  padding: 8px 6px;
-  font-size: clamp(1.2rem, 3vw, 2.2rem); 
+  padding: 6px 4px;
+  margin-bottom: 4px; 
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 700; 
   border-radius: 8px;
   box-shadow: 0 0 10px #b388ff;
 }
-.countdown-component .label {
-  margin-top: 5px;
-  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
-  color: #d0b3ff;
+@keyframes countdown-blink {
+  50% { opacity: 0; }
 }
 
 .countdown-component .colon {
-  font-size: clamp(1.2rem, 5vw, 2.2rem);
-  font-weight: bold;
+margin-top: 20px;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  font-weight: 700;
   color: #b388ff;
-  animation: countdown-blink 1s step-start infinite;
+  animation: countdown-blink 1s step-start infinite; 
+  
   display: flex;
-  align-items: center;
+  align-items: center;  
   justify-content: center;
-  height: 100%;
-  padding: 0 2px;
-  margin-top: 6px; 
+  
+height: 40px; 
+  margin-top: 0;                  
 }
 
+
+@media (max-width: 480px) {
+  .countdown-component .countup {
+    gap: 4px;
+  }
+  .countdown-component .card {
+    font-size: 1.2rem;
+    padding: 4px 3px;
+  }
+  .countdown-component .label {
+    font-size: 0.55rem;
+  }
+  .countdown-component .colon {
+    font-size: 1.2rem;
+    margin-top: 2px;
+  }
+}
 @keyframes countdown-blink {
   50% { opacity: 0; }
 }
