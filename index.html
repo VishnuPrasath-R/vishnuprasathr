@@ -5,8 +5,123 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Vishnu Prasath R — Portfolio</title>
 <meta name="description" content="Vishnu Prasath R — L2 Appian Certified Senior Developer. Portfolio & resume." />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
 <style>
-/* Existing styles here */
+:root {
+  --bg: #0e0e0e;
+  --fg: #ffffff;
+  --muted: #b0b0b0;
+  --accent: #6c63ff;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: #1a1a1a;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+}
+.hero {
+  padding: 4rem 1rem;
+  background: radial-gradient(circle at top left, #6c63ff33, transparent), radial-gradient(circle at bottom right, #6c63ff33, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-inner {
+  max-width: 900px;
+  width: 100%;
+}
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.card {
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+.section-head h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+.kpi-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.kpi {
+  flex: 1 1 150px;
+  background-color: #2c2c2c;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+.kpi .num {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.kpi .label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.timeline-item ul {
+  padding-left: 1.25rem;
+}
+.btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.ghost {
+  background: none;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .kpi-row {
+    flex-direction: column;
+  }
+  nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
 </style>
 </head>
 <body>
