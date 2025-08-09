@@ -28,9 +28,47 @@ color:#e9f0ff;
 overflow-x:hidden;
 }
 .hero{position:relative;min-height:72vh;display:flex;align-items:center;justify-content:center;padding:60px 24px;text-align:center;overflow:hidden;}
-.gradient-blob{position:absolute;filter:blur(80px) saturate(120%);opacity:0.8;mix-blend-mode:screen;animation: float 10s ease-in-out infinite;border-radius:40%;transform-origin:center;}
-.blob1{width:420px;height:420px;left:-10%;top:-10%;background:linear-gradient(45deg,var(--accent),#ff6b9a);animation-duration:12s}
-.blob2{width:320px;height:320px;right:-8%;bottom:-8%;background:linear-gradient(45deg,var(--accent2),#3bf5ff);animation-duration:14s}
+:root {
+  --heading-color: #d1aaff; 
+  --heading-shadow: rgba(209, 170, 255, 0.4); 
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  text-shadow: 0 0 8px var(--heading-shadow);
+}
+
+.gradient-blob {
+  position: absolute;
+  filter: blur(80px) saturate(120%);
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  animation: float 10s ease-in-out infinite;
+  border-radius: 40%;
+  transform-origin: center;
+}
+
+.blob1 {
+  width: 420px;
+  height: 420px;
+  left: -10%;
+  top: -10%;
+  background: linear-gradient(45deg, #3d1a7a, #7a2fa3); 
+  animation-duration: 12s;
+}
+
+.blob2 {
+  width: 320px;
+  height: 320px;
+  right: -8%;
+  bottom: -8%;
+  background: linear-gradient(45deg, #1a144b, #4a2a99); 
+  animation-duration: 14s;
+}
+
+
+
+
 @keyframes float{0%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(20px) rotate(6deg)}100%{transform:translateY(0) rotate(0deg)}}
 .container{max-width:1100px;margin:0 auto;width:100%}
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);border-radius:14px;padding:20px;box-shadow: 0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.04);}
@@ -57,7 +95,7 @@ h2{font-size:1.05rem;margin:0;color:var(--muted)}
 
 .kpi-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 per row on desktop */
+  grid-template-columns: repeat(4, 1fr); 
   gap: 14px;
   margin-top: 22px;
 }
@@ -106,9 +144,35 @@ section{margin-bottom:20px}
 .timeline-item{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);border-left:3px solid rgba(255,255,255,0.04)}
 .skill{margin-bottom:10px}
 .skill .row{display:flex;justify-content:space-between;font-size:0.9rem;color:var(--muted);margin-bottom:6px}
-.bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;overflow:hidden;position:relative}
-.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));width:100%;position:absolute;top:0;left:0;}
-.bar::after{content:attr(data-level);position:absolute;right:10px;top:-24px;color:var(--muted);font-size:0.85rem;}
+
+.bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.06); 
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #6a4bff, #3d2e82); 
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bar::after {
+  content: attr(data-level);
+  position: absolute;
+  right: 10px;
+  top: -24px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+
 .ach-list{display:grid;grid-template-columns:1fr;gap:8px}
 .ach{padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:0.95rem}
 footer{margin-top:28px;text-align:center;color:var(--muted);font-size:0.9rem}
@@ -550,7 +614,7 @@ July 2022 – April 2025
 
 <aside>
 <div class="timeline-item">
-<strong>Industries</strong>
+<h3 style="margin-top:0">Industries</h3>
 <div style="color:var(--muted);font-size:0.95rem;margin-top:6px">
 that uses the applications I built.
 </div>
@@ -565,7 +629,7 @@ that uses the applications I built.
 </div>
 <br>
 <div class="timeline-item">
-<strong>Client Countries</strong>
+<h3 style="margin-top:0">Client Countries</h3>
 
 <ul style="margin-top:8px;color:var(--muted)">
 <li>USA - 3</li>
@@ -578,7 +642,7 @@ that uses the applications I built.
 <br>
 
 <div class="timeline-item">
-<strong>Applications Built</strong>
+<h3 style="margin-top:0">Applications Built</h3>
 
 <ul style="margin-top:8px;color:var(--muted)">
 <li>Generic Approval Framework</li>
@@ -587,7 +651,7 @@ that uses the applications I built.
 <li>Motor Insurance Claim Processing System</li>
 <li>Form Builder</li>
 </ul>
-<strong>Applications in Development</strong>
+<h3 style="margin-top:0">Applications in Development</h3>
 
 <ul style="margin-top:8px;color:var(--muted)">
 <li>Equipments Order, Management & Invocing System</li>
